@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+    --header-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    padding-top: var(--header-height);
+    line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+  header {
+    background: linear-gradient(
+        180deg,
+        #1f1f1f,
+        #171717);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: #1f1f1f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    z-index: 100;
+}
+
+.logo {
+    color: #ffb703;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffb703;
+}
+
+/* Hamburger button */
+.nav-toggle {
+    display: none;
+    font-size: 22px;
+    background: none;
+    color: #ffb703;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    background: url("assets/Hero.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+}
+
+/* Buttons */
+button {
+    margin-top: 15px;
+    padding: 10px 30px;
+    border: none;
+    background: #ffb703;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e09f3e;
+    transform: scale(1.05);
+}
+
+/* ===== MENU ===== */
+.menu {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 0 16px;
+    flex-wrap: wrap; /* Add this to allow cards to drop to the next line */
+}
+
+.card {
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* ===== ABOUT / CONTACT ===== */
+.about,
+.contact {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ===== MOBILE NAVBAR ===== */
+
+/* ===== MOBILE NAVBAR ===== */
+
+@media (max-width: 768px) {
+    .menu-items {
+        flex-direction: column;
+    }
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    /* ADD THIS HERE (move the closing brace down) */
+    nav {
+        position: absolute;
+        top: var(--header-height);
+        right: 0;
+        background: #1f1f1f;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-toggle {
+        display: block; /* Show hamburger button */
+    }
+} /* <--- THE CLOSING BRACE MUST GO HERE */
+
+/* Extra fixes */
+.hero-content h1 {
+    font-size: 26px;
+}
